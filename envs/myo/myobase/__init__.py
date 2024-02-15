@@ -47,7 +47,7 @@ curr_dir = os.path.dirname(os.path.abspath(__file__))
 
 print("MyoSuite:> Registering Myo Envs")
 
-# MyoArm Reaching
+# MyoArm
 register_env_with_variants(id='myoArmReachRandom-v0',
         entry_point='myosuite.envs.myo.myobase.reach_v0:ReachEnvV0',
         max_episode_steps=100,
@@ -63,20 +63,43 @@ register_env_with_variants(id='myoArmReachRandom-v0',
         }
     )
 
-register_env_with_variants(id='myoArmPoseRandom-v0',
+register_env_with_variants(id='myoArmPoseFixed-v0',
         entry_point='myosuite.envs.myo.myobase.pose_v0:PoseEnvV0',
         max_episode_steps=100,
         kwargs={
             'model_path': curr_dir+'/../../../simhive/myo_sim/arm/myoarm_relocate.xml',
             'viz_site_targets': ('THtip','IFtip','MFtip','RFtip','LFtip'),
-            'target_jnt_value': np.array([0, 0, 0, -0.0904, 0.0824475, -0.681555, -0.514888, 0, -0.013964, -0.0458132, 0, 0.67553, -0.020944, 0.76979, 0.65982, 0, 0, 0, 0, 0.479155, -0.099484, 0.95831, 0]),
+            'target_jnt_value': np.array([0, 0, 0, -0.0904, 0.0824475, -0.681555, -0.514888, 0, -0.013964, -0.0458132, 0, 0.67553, -0.020944, 0.8, 0.65982, 0, 0, 0, 0, 0.479155, -0.099484, 0.95831, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]),
             'normalize_act': True,
             'pose_thd': .7,
-            'reset_type': "init",        # none, init, random
+            'reset_type': "random",        # none, init, random
             'target_type': 'fixed',      # generate/ fixed
         }
+
     )
 
+
+
+"""
+register_env_with_variants(id='myoElbowPose1D6MExoFixed-v0',
+        entry_point='myosuite.envs.myo.myobase.pose_v0:PoseEnvV0',
+        max_episode_steps=100,
+        kwargs={
+            'model_path': curr_dir+'/../assets/elbow/myoelbow_1dof6muscles_1dofexo.xml',
+            'target_jnt_range': {'r_elbow_flex':(2, 2),},
+            'viz_site_targets': ('wrist',),
+            'normalize_act': True,
+            'pose_thd': .175,
+            'reset_type': 'random',
+            'weighted_reward_keys':{
+                                "pose": 1.0,
+                                "bonus": 4.0,
+                                "act_reg": 5.0,
+                                "penalty": 50,
+            }
+        }
+    )
+"""
 
 # Finger-tip reaching ==============================
 register_env_with_variants(id='motorFingerReachFixed-v0',

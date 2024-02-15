@@ -126,6 +126,7 @@
                                 <site name="Elbow_PT_FCU_site_FCU_side" pos="0.03 -0.2872 -0.04"/>
 
                                 <site name="ECRL-P1" pos="-0.0073 -0.2609 0.0091"/>
+                                <site name="ECRL-P1_target" pos="-0.0073 -0.2609 0.0091"/>
                                 <site name="ECRB-P1" pos="0.0135 -0.2905 0.017"/>
                                 <site name="ECU-P1" pos="0.0008 -0.2895 0.0188"/>
                                 <site name="FCR-P1" pos="0.0076 -0.2781 -0.037"/>
