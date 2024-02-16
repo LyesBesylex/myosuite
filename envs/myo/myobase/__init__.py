@@ -53,11 +53,7 @@ register_env_with_variants(id='myoArmReachRandom-v0',
         max_episode_steps=100,
         kwargs={
             'model_path': curr_dir+'/../../../simhive/myo_sim/arm/myoarm_relocate.xml',
-            'target_reach_range': {'THtip': ((-0.165-0.020, -0.537-0.040, 1.495-0.040), (-0.165+0.040, -0.537+0.020, 1.495+0.040)),
-                                    'IFtip': ((-0.151-0.040, -0.547-0.020, 1.455-0.010), (-0.151+0.040, -0.547+0.020, 1.455+0.010)),
-                                    'MFtip': ((-0.146-0.040, -0.547-0.020, 1.447-0.010), (-0.146+0.040, -0.547+0.020, 1.447+0.010)),
-                                    'RFtip': ((-0.148-0.040, -0.543-0.020, 1.445-0.010), (-0.148+0.040, -0.543+0.020, 1.445+0.010)),
-                                    'LFtip': ((-0.148-0.040, -0.528-0.020, 1.434-0.010), (-0.148+0.040, -0.528+0.020, 1.434+0.010))},
+            'target_reach_range': {'IFtip': ((0.1, 0, 0), (0.5,  1, 0)),}, #Two Coordinates, they give the limit of what reach is possible - To change size of target go to the body asset of environment
             'normalize_act': True,
             'far_th': 0.034
         }
@@ -73,7 +69,7 @@ register_env_with_variants(id='myoArmPoseFixed-v0',
             'normalize_act': True,
             'pose_thd': .7,
             'reset_type': "random",        # none, init, random
-            'target_type': 'fixed',      # generate/ fixed
+            'target_type': 'fixed',      # genera te/ fixed
         }
 
     )

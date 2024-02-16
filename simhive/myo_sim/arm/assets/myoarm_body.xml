@@ -671,8 +671,8 @@
                                                                 <site name="EIP-P10" pos="0.001 -0.004 0.003"/>
                                                                 <site name="EIP-P11" pos="0.0026 -0.0123 0.0027"/>
                                                                 <geom class="myohand_coll" type="ellipsoid" size=".005 .008 .002" pos=".003 -.018 0.0055" euler="0.2 0.1 0.15" rgba="1 1 1 .8"/>
-                                                                <site name="IFtip" size="0.005" pos=".002 -.018 -.00" rgba="0 0.8 0 1"/>
-                                                                <site name="IFtip_target" size="0.005" pos=".002 -.018 -.00" rgba="0 0.8 0 1"/>
+                                                                <site name="IFtip" size="0.005" pos=".002 -.018 -.00" rgba="1 1 1 1"/>
+                                                                <site name="IFtip_target" size="0.05" pos="0 -.25 .95" rgba="1 1 1 1"/>
                                                             </body>
                                                         </body>
                                                     </body>

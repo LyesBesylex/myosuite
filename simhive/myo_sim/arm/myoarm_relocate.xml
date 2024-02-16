@@ -30,7 +30,7 @@
         </body>
 
         <!-- ======= Object ======= -->
-        <body name="Object" pos="0 -.25 .95">
+        <body name="Object" pos="0 -.25 .95"> <!-- Position of object xyz -->
             <joint name="OBJTx" pos="0 0 0" axis="1 0 0" limited="true" type="slide" range="-1.20 1.55" damping="0.001" />
             <joint name="OBJTy" pos="0 0 0" axis="0 1 0" limited="true" type="slide" range="-1.10 1.20" damping="0.001" />
             <joint name="OBJTz" pos="0 0 0" axis="0 0 1" limited="true" type="slide" range="-1.10 1.35" damping="0.001" />
