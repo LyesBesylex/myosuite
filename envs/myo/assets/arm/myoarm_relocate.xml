@@ -58,7 +58,7 @@
             <geom name="wall2" type="box" size="0.10 0.01 0.10" pos="0 -.091 0.1" contype="1" conaffinity="1" group="2" material="matwood"/>
             <geom name="wall3" type="box" size="0.01 0.10 0.10" pos="-.091 0 0.1" contype="1" conaffinity="1" group="2" material="matwood"/>
 
-            <site name="target_ball" type="sphere" size="0.045" rgba="0.2 1.7 0.2 0.1"/>
+            <site name="target_ball" type="sphere" size="0.0045" rgba="0.2 1.7 0.2 0.1"/>
             <site name="target_o" type="sphere" size="0.005" rgba="0.8 0.8 0.8 0.8" group="4" pos="0 0 0" />
             <site name="target_x" type="sphere" size="0.005" rgba="0.8 0.2 0.2 0.8" group="4" pos="0.03 0 0" />
             <site name="target_y" type="sphere" size="0.005" rgba="0.2 0.8 0.2 0.8" group="4" pos="0 .03 0" />

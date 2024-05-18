@@ -21,6 +21,19 @@ register(id='myoChallengeRelocateP1-v0',
         }
     )
 
+register(id='myoChallengeRelocateP1-v1',
+        entry_point='myosuite.envs.myo.myochallenge.relocate_v0:RelocateEnvV0',
+        max_episode_steps=150,
+        kwargs={
+            'model_path': curr_dir+'/../assets/arm/myoarm_relocate.xml',
+            'normalize_act': True,
+            'frame_skip': 5,
+            'pos_th': 0.1,              # cover entire base of the receptacle
+            'rot_th': np.inf,           # ignore rotation errors
+            'target_xyz_range': {'high':[0.5, 1, 0], 'low':[0.5, 1, 0]},
+            'target_rxryrz_range': {'high':[0.0, 0.0, 0.0], 'low':[0.0, 0.0, 0.0]}
+        }
+    )
 # MyoChallenge Manipulation P2
 register(id='myoChallengeRelocateP2-v0',
         entry_point='myosuite.envs.myo.myochallenge.relocate_v0:RelocateEnvV0',

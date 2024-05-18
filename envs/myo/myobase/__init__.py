@@ -48,54 +48,34 @@ curr_dir = os.path.dirname(os.path.abspath(__file__))
 print("MyoSuite:> Registering Myo Envs")
 
 # MyoArm
-register_env_with_variants(id='myoArmReachRandom-v0',
+register_env_with_variants(id='ArmReachFixed-v0',
         entry_point='myosuite.envs.myo.myobase.reach_v0:ReachEnvV0',
         max_episode_steps=100,
-        kwargs={
-            'model_path': curr_dir+'/../../../simhive/myo_sim/arm/myoarm_relocate.xml',
-            'target_reach_range': {'IFtip': ((0.1, 0, 0), (0.5,  1, 0)),}, #Two Coordinates, they give the limit of what reach is possible - To change size of target go to the body asset of environment
-            'normalize_act': True,
-            'far_th': 0.034
-        }
+                           kwargs={
+                               'model_path': curr_dir + '/../../../simhive/myo_sim/arm/myoarm_relocate.xml',
+                               'target_reach_range': {
+                                   'IFtip': (0.5, 0.5, 0)
+                               },
+                               'normalize_act': True,
+                               'far_th': 0.034
+                           }
     )
 
-register_env_with_variants(id='myoArmPoseFixed-v0',
-        entry_point='myosuite.envs.myo.myobase.pose_v0:PoseEnvV0',
+register_env_with_variants(id='myoArmReachFixed-v1',
+        entry_point='myosuite.envs.myo.myobase.armreach_v0:ReachEnvV0',
         max_episode_steps=100,
-        kwargs={
-            'model_path': curr_dir+'/../../../simhive/myo_sim/arm/myoarm_relocate.xml',
-            'viz_site_targets': ('THtip','IFtip','MFtip','RFtip','LFtip'),
-            'target_jnt_value': np.array([0, 0, 0, -0.0904, 0.0824475, -0.681555, -0.514888, 0, -0.013964, -0.0458132, 0, 0.67553, -0.020944, 0.8, 0.65982, 0, 0, 0, 0, 0.479155, -0.099484, 0.95831, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]),
-            'normalize_act': True,
-            'pose_thd': .7,
-            'reset_type': "random",        # none, init, random
-            'target_type': 'fixed',      # genera te/ fixed
-        }
-
+                           kwargs={
+                               'model_path': curr_dir + '/../../../simhive/myo_sim/arm/myoarm.xml',
+                               'target_reach_range': {
+                                   'IFtip': (0.5, 0.5, 0)
+                               },
+                               'normalize_act': True,
+                               'far_th': 0.034
+                           }
     )
 
 
 
-"""
-register_env_with_variants(id='myoElbowPose1D6MExoFixed-v0',
-        entry_point='myosuite.envs.myo.myobase.pose_v0:PoseEnvV0',
-        max_episode_steps=100,
-        kwargs={
-            'model_path': curr_dir+'/../assets/elbow/myoelbow_1dof6muscles_1dofexo.xml',
-            'target_jnt_range': {'r_elbow_flex':(2, 2),},
-            'viz_site_targets': ('wrist',),
-            'normalize_act': True,
-            'pose_thd': .175,
-            'reset_type': 'random',
-            'weighted_reward_keys':{
-                                "pose": 1.0,
-                                "bonus": 4.0,
-                                "act_reg": 5.0,
-                                "penalty": 50,
-            }
-        }
-    )
-"""
 
 # Finger-tip reaching ==============================
 register_env_with_variants(id='motorFingerReachFixed-v0',
@@ -437,10 +417,10 @@ register_env_with_variants(id='myoHandReachFixed-v0',
             'model_path': curr_dir+'/../assets/hand/myohand_pose.xml',
             'target_reach_range': {
                 'THtip': ((-0.165, -0.537, 1.495), (-0.165, -0.537, 1.495)),
-                'IFtip': ((-0.151, -0.547, 1.455), (-0.151, -0.547, 1.455)),
-                'MFtip': ((-0.146, -0.547, 1.447), (-0.146, -0.547, 1.447)),
-                'RFtip': ((-0.148, -0.543, 1.445), (-0.148, -0.543, 1.445)),
-                'LFtip': ((-0.148, -0.528, 1.434), (-0.148, -0.528, 1.434)),
+                'IFtip': ((-0.151, -0.547, 1.455), (-0.165, -0.537, 1.495)),
+                'MFtip': ((-0.146, -0.547, 1.447), (-0.165, -0.537, 1.495)),
+                'RFtip': ((-0.148, -0.543, 1.445), (-0.165, -0.537, 1.495)),
+                'LFtip': ((-0.148, -0.528, 1.434), (-0.165, -0.537, 1.495)),
                 },
             'normalize_act': True,
             'far_th': 0.044

@@ -86,7 +86,7 @@ class RelocateEnvV0(BaseV0):
 
 
     def get_reward_dict(self, obs_dict):
-        reach_dist = np.abs(np.linalg.norm(self.obs_dict['reach_err'], axis=-1))
+        reach_dist = np.abs(np.linalg.norm(self.obs_dict['reach_err'], axis=-1)) 
         pos_dist = np.abs(np.linalg.norm(self.obs_dict['pos_err'], axis=-1))
         rot_dist = np.abs(np.linalg.norm(self.obs_dict['rot_err'], axis=-1))
         act_mag = np.linalg.norm(self.obs_dict['act'], axis=-1)/self.sim.model.na if self.sim.model.na !=0 else 0
