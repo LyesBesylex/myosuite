@@ -49,31 +49,42 @@ print("MyoSuite:> Registering Myo Envs")
 
 # MyoArm
 register_env_with_variants(id='ArmReachFixed-v0',
-        entry_point='myosuite.envs.myo.myobase.reach_v0:ReachEnvV0',
-        max_episode_steps=100,
-                           kwargs={
-                               'model_path': curr_dir + '/../../../simhive/myo_sim/arm/myoarm_relocate.xml',
-                               'target_reach_range': {
-                                   'IFtip': (0.5, 0.5, 0)
-                               },
-                               'normalize_act': True,
-                               'far_th': 0.034
-                           }
-    )
-
-register_env_with_variants(id='myoArmReachFixed-v1',
         entry_point='myosuite.envs.myo.myobase.armreach_v0:ReachEnvV0',
         max_episode_steps=100,
                            kwargs={
-                               'model_path': curr_dir + '/../../../simhive/myo_sim/arm/myoarm.xml',
-                               'target_reach_range': {
-                                   'IFtip': (0.5, 0.5, 0)
-                               },
+                               'model_path': curr_dir+'/../assets/arm/myoarm_reach.xml',
                                'normalize_act': True,
-                               'far_th': 0.034
+                                'obj_xyz_range': [[-.3, -.5, 0.9], [-.3, -.5, 0.9]], #xyz: neg x, neg y and positive z(around 1)
+                               'far_th': 0.25
                            }
     )
 
+register_env_with_variants(id='CenterReachOut-v0',
+                           entry_point='myosuite.envs.myo.myobase.CenterReachOut_v0:ReachEnvV0',
+                           max_episode_steps=100,
+                           kwargs={
+                               'model_path': curr_dir + '/../assets/arm/myoarm_centerreachout.xml',
+                               'normalize_act': True,
+                               'obj_xyz_range': [[-.05, -0.1, 1.09], [0.1, -0.3, 1.09], [0.15, -0.2, 1.09],[0.1, -0.1, 1.09], [-.05,-0.4, 1.09],[-.15, -0.3, 1.09], [-.2, -0.2, 1.09],[-.15, -0.1, 1.09]],#[[-.2, -.5, 1.09], [-.2, -.25, 1.09],[-.2, -0.1 ,1.09], [0.1, -.5, 1.09], [0.1, -.25, 1.09],[0.1, -0.05 ,1.09], [0.1, -.5, 1.09],[-.05, -0.1 ,1.09]]
+                               # xyz: neg x, neg y and positive z(around 1)
+                               'far_th': 0.15
+                           }
+                           )
+
+
+register_env_with_variants(id='myoArmReachFixed-v1',
+                           entry_point='myosuite.envs.myo.myobase.CenterReachOut_v0:ReachEnvV0',
+                           max_episode_steps=150,
+                           kwargs={
+                               'model_path': curr_dir + '/../assets/arm/myoarm_relocate.xml',
+                               'normalize_act': True,
+                               'frame_skip': 5,
+                               'pos_th': 0.1,  # cover entire base of the receptacle
+                               'rot_th': np.inf,  # ignore rotation errors
+                               'target_xyz_range': {'high': [0.0, 0.0, 0.0], 'low': [0.0, 0.0, 0.0]},
+                               'target_rxryrz_range': {'high': [0.0, 0.0, 0.0], 'low': [0.0, 0.0, 0.0]}
+                           }
+                           )
 
 
 
@@ -83,7 +94,7 @@ register_env_with_variants(id='motorFingerReachFixed-v0',
         max_episode_steps=200,
         kwargs={
             'model_path': curr_dir+'/../../../simhive/myo_sim/finger/motorfinger_v0.xml',
-            'target_reach_range': {'IFtip': ((.010 -.020 -.008), (.010 -.020 -.008)),},
+            'target_reach_range': {'IFtip': ((.1, -.1, .1), (.1, -.1, .1)),},
             'normalize_act': True,
             'frame_skip': 5,
         }

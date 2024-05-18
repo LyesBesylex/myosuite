@@ -11,15 +11,31 @@ register(id='myoChallengeRelocateP1-v0',
         entry_point='myosuite.envs.myo.myochallenge.relocate_v0:RelocateEnvV0',
         max_episode_steps=150,
         kwargs={
-            'model_path': curr_dir+'/../assets/arm/myoarm_relocate.xml',
+            'model_path': curr_dir+'/../assets/arm/myoarm_reach.xml',
             'normalize_act': True,
             'frame_skip': 5,
             'pos_th': 0.1,              # cover entire base of the receptacle
             'rot_th': np.inf,           # ignore rotation errors
-            'target_xyz_range': {'high':[0.3, -.1, 1.05], 'low':[0.0, -.45, 0.9]},
+            'target_xyz_range': {'high':[0.0, 0.0, 0.0], 'low':[0.0, 0.0, 0.0]},
             'target_rxryrz_range': {'high':[0.0, 0.0, 0.0], 'low':[0.0, 0.0, 0.0]}
         }
     )
+
+register(
+    id='myoChallengeReachP1-v0',
+    entry_point='myosuite.envs.myo.myochallenge.relocatereach_v0:ReachObjectEnv',
+    max_episode_steps=150,  # Adjust as needed
+    kwargs={
+        'model_path': os.path.join(curr_dir, '../assets/arm/myoarm_reach.xml'),
+        'normalize_act': True,
+        'frame_skip': 5,
+        'pos_th': 0.1,  # Adjust as needed
+        'rot_th': np.inf,  # Adjust as needed
+        'target_xyz': {'high': [0.3, -0.1, 1.05], 'low': [0.0, -0.45, 0.9]},
+        'target_rxryrz_range': {'high': [0.0, 0.0, 0.0], 'low': [0.0, 0.0, 0.0]},
+        # Add any additional kwargs as needed
+    }
+)
 
 register(id='myoChallengeRelocateP1-v1',
         entry_point='myosuite.envs.myo.myochallenge.relocate_v0:RelocateEnvV0',
@@ -30,8 +46,8 @@ register(id='myoChallengeRelocateP1-v1',
             'frame_skip': 5,
             'pos_th': 0.1,              # cover entire base of the receptacle
             'rot_th': np.inf,           # ignore rotation errors
-            'target_xyz_range': {'high':[0.5, 1, 0], 'low':[0.5, 1, 0]},
-            'target_rxryrz_range': {'high':[0.0, 0.0, 0.0], 'low':[0.0, 0.0, 0.0]}
+            'target_xyz_range': {'high':[0.3, -.1, 1.05], 'low':[0.3, -.1, 1.05]},
+            'target_rxryrz_range': {'high':[0.3, -.1, 1.05], 'low':[0.3, -.1, 1.05]}
         }
     )
 # MyoChallenge Manipulation P2

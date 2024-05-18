@@ -538,9 +538,8 @@
                                                                 <site name="EPL-P12" pos="0.0054 -0.0071 -0.0046"/>
                                                                 <site name="FPL-P11" pos="0.0024 -0.0113 -0.0041"/>
                                                                 <geom class="myohand_coll" type="ellipsoid" size=".007 .0055 .002" pos=".015 -.018 -.007" euler="0.2 1.57 1.5" rgba="1 1 1 .8"/>
-                                                                <site name="THtip" size="0.005" pos=".010 -.020 -.008" rgba=".8 0 0 1"/>
-                                                                <site name="THtip_target" size="0.005" pos=".010 -.020 -.008" rgba=".8 0 0 1"/>
-                                                            </body>
+                                                                <site name="THtip" size="0.005" pos="-.001 -.017 -.003" rgba=".8 0 0 1"/>
+                                                                <site name="THtip_target" size="0.005" pos="0 -.25 .95" rgba="1 1 1 1"/>                                                            </body>
                                                         </body>
                                                     </body>
                                                 </body>
@@ -671,9 +670,8 @@
                                                                 <site name="EIP-P10" pos="0.001 -0.004 0.003"/>
                                                                 <site name="EIP-P11" pos="0.0026 -0.0123 0.0027"/>
                                                                 <geom class="myohand_coll" type="ellipsoid" size=".005 .008 .002" pos=".003 -.018 0.0055" euler="0.2 0.1 0.15" rgba="1 1 1 .8"/>
-                                                                <site name="IFtip" size="0.005" pos="0.5 0.5 0" rgba="1 1 1 1"/>
-                                                                <site name="IFtip_target" size="0.05" pos="0.5 0.5 0" rgba="0 0 0 1"/>
-                                                            </body>
+                                                                <site name="IFtip" size="0.005" pos="-.001 -.017 -.003" rgba="1 1 1 1"/>
+                                                              <site name="IFtip_target" size="0.005" pos="0 -.25 .95" rgba="1 1 1 1"/>                              </body>
                                                         </body>
                                                     </body>
                                                 </body>
@@ -771,9 +769,8 @@
                                                                 <site name="FDP3-P10" pos="0.0008 -0.004 -0.002"/>
                                                                 <site name="EDC3-P9" pos="0.0008 -0.0058 0.0041"/>
                                                                 <geom class="myohand_coll" type="ellipsoid" size=".0055 .008 .002" pos="0.002 -.019 0.003" euler="0.2 0 0.0" rgba="1 1 1 .8"/>
-                                                                <site name="MFtip" size="0.005" pos="0.5 0.5 0" rgba="0 0 0.8 1"/>
-                                                                <site name="MFtip_target" size="0.005" pos="0.5 0.5 0" rgba="0 0 0.8 1"/>
-                                                            </body>
+                                                                <site name="MFtip" size="0.005" pos="-.001 -.017 -.003" rgba="0 0 0.8 1"/>
+                                                              <site name="MFtip_target" size="0.005" pos="0 -.25 .95" rgba="1 1 1 1"/>                                                           </body>
                                                         </body>
                                                     </body>
                                                 </body>
@@ -870,9 +867,8 @@
                                                                 <site name="FDP4-P10" pos="0.0002 -0.014 -0.0022"/>
                                                                 <site name="EDC4-P9" pos="-0.001 -0.008 0.003"/>
                                                                 <geom class="myohand_coll" type="ellipsoid" size=".005 .008 .002" pos="-.004 -.019 0.003" euler="0.2 -.5 0.0" rgba="1 1 1 .8"/>
-                                                                <site name="RFtip" size="0.005" pos="0.5 0.5 0" rgba="0.8 0.8 0 1"/>
-                                                                <site name="RFtip_target" size="0.005" pos="0.5 0.5 0" rgba="0.8 0.8 0 1"/>
-                                                            </body>
+                                                                <site name="RFtip" size="0.005" pos="-.001 -.017 -.003" rgba="0.8 0.8 0 1"/>
+                                                              <site name="RFtip_target" size="0.005" pos="-.001 -.017 -.003" rgba="1 1 1 1"/>                                                          </body>
                                                         </body>
                                                     </body>
                                                 </body>
@@ -964,8 +960,8 @@
                                                                 <site name="EDC5-P9" pos="-0.002 -0.007 0"/>
                                                                 <site name="EDM-P9" pos="-0.0023 -0.0033 0.0006"/>
                                                                 <geom class="myohand_coll" type="ellipsoid" size=".0045 .006 .002" pos="-.005 -.018 0.000" euler="0.2 -.8 0.0" rgba="1 1 1 .8"/>
-                                                                <site name="LFtip" size="0.005" pos="0.5 0.5 0" rgba="0.8 0 0.8 1"/>
-                                                                <site name="LFtip_target" size="0.005" pos="0.5 0.5 0" rgba="0.8 0 0.8 1"/>
+                                                                <site name="LFtip" size="0.005" pos="-.001 -.017 -.003" rgba="0.8 0 0.8 1"/>
+                                                                <site name="LFtip_target" size="0.005" pos="0 -.25 .95" rgba="1 1 1 1"/>
                                                             </body>
                                                         </body>
                                                     </body>
